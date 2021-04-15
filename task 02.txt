@@ -1,0 +1,33 @@
+1. Load the rest countries data using your html and script.js file and run a for loop on the data and print all the country name in the console. 
+2. Give a write up on Difference between copy by value and copy by reference.
+A) 				Copy by Value
+   In copy by value we declare different variables with different memory locations, For eg. 
+				var a = 3;
+				var b = a;
+			    	   a = 10;
+				console.log(a,b);    // output = 10 3
+   Over here we can see that if we change the value of any variable its does not affect the anpther variable, because of having different memory location. Which only happens in Copy by Value.
+				
+				Copy by Reference
+   In copy by reference we declare different variables with same memory locations, For eg. 
+				var arr1 = [1,2,3];
+				var arr2 = arr1;
+			    	   arr2[0] = 10;
+			           arr1[1] = 20;
+				console.log(arr2);   // output = 10 20 3
+				console.log(arr1);   // output = 10 20 3
+   Over here we can see that if we change any of the array value it reflect in another array also,it's happens because of having same memory location. Which only possible in Copy by Reference.
+
+
+3. How to copy by value a composite datatype (array+objects).
+A) What changes do we make to our code, so that changes in one array doesn’t affect second array.
+   We can use the concept of SPREAD OPERATOR ( … ) to overcome this.
+   To have a better understanding, let’s look at below example.
+				var arr1 = [1,2,3];
+				var arr2 = [...arr1];
+			    	   arr2[0] = 10;
+				console.log(arr1);   // output = 1 2 3
+				console.log(arr2);   // output = 10 2 3 
+   So, arr2 makes a copy of its own in the form of […arr1].
+   What […arr1] does here is, it takes in an array arr1 and expands it into individual elements, and again it takes the form of array and gets assigned to arr2.
+   So, the arr1 doesn’t get altered even after we make changes to array arr2, after the usage of spread operator.
